@@ -17,15 +17,15 @@ public class LibraryService {
         Library library =new Library(libraryDto.getBookName()
         ,libraryDto.getAuthor(),libraryDto.getNumberOfPages(),
                 libraryDto.getCategory(), libraryDto.getIsbn());
-        libraryRepo.save(library);
+      libraryRepo.save(library);
     }
 @Transactional
-    public void delte(int isbn){
-        libraryRepo.remove(isbn);
+    public void delte(long number){
+        libraryRepo.deleteById(number);
     }
 @Transactional
-    public Library rent(int isbn, int day, String firstName, String lastName, String id) {
-Library library =libraryRepo.findBookByIsbn(isbn).orElseThrow(NotFoudBookExeption::new);
+    public Library rent(long number, int day, String firstName, String lastName, String id) {
+Library library =libraryRepo.findById(number).orElseThrow(NotFoudBookExeption::new);
 LocalDate localDate =LocalDate.now();
 
 library.setDateOfReturn(localDate.plusDays(day));
@@ -35,13 +35,18 @@ library.setId(id);
 return library;
     }
 @Transactional
-    public void  returnBook(int isbn){
-        Library library =libraryRepo.findBookByIsbn(isbn).orElseThrow(NotFoudBookExeption::new);
+    public void  returnBook(long number){
+        Library library =libraryRepo.findById(number).orElseThrow(NotFoudBookExeption::new);
         library.setDateOfReturn(null);
         library.setFirstName(null);
         library.setLastName(null);
         library.setId(null);
 
     }
+    public int countAllBook(){
+      return   libraryRepo.countLibraryByIdIsNull();
+    }
+
+
 
 }

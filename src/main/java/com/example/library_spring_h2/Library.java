@@ -1,19 +1,29 @@
 package com.example.library_spring_h2;
 
-import jakarta.persistence.Entity;
-
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 
 @Entity
+
 public class Library {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long number;
     private String bookName;
-    private String Author;
+    private String author;
     private int numberOfPages;
     private String category;
-    @Id
+
+    public long getNumber() {
+        return number;
+    }
+
+    public void setNumber(long number) {
+        this.number = number;
+    }
+
     private int isbn;
     private String firstName;
     private String lastName;
@@ -34,7 +44,7 @@ public class Library {
 
     public Library(String bookName, String author, int numberOfPages, String category, int isbn) {
         this.bookName = bookName;
-        Author = author;
+        this.author = author;
         this.numberOfPages = numberOfPages;
         this.category = category;
         this.isbn = isbn;
@@ -50,11 +60,11 @@ public class Library {
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String author) {
-        Author = author;
+        author = author;
     }
 
     public int getNumberOfPages() {
@@ -109,7 +119,7 @@ public class Library {
     public String toString() {
         return "Library{" +
                 "bookName='" + bookName + '\'' +
-                ", Author='" + Author + '\'' +
+                ", Author='" + author + '\'' +
                 ", numberOfPages='" + numberOfPages + '\'' +
                 ", category='" + category + '\'' +
                 ", isbn=" + isbn +
