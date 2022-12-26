@@ -54,7 +54,7 @@ public class Loop {
         String bookName = scanner.nextLine().replaceAll(" ","_");
         System.out.println("Podaj Autora");
         String author = scanner.nextLine().replaceAll(" ","_");
-       // scanner.nextLine();
+
         System.out.println("Podaj ilosc stron");
         int pagesNumber = scanner.nextInt();
         System.out.println("Podaj kategorie");
