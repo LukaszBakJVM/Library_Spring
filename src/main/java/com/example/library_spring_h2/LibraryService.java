@@ -31,7 +31,7 @@ LocalDate localDate =LocalDate.now();
 library.setDateOfReturn(localDate.plusDays(day));
 library.setFirstName(firstName);
 library.setLastName(lastName);
-library.setId(id);
+library.setDocumentNumber(id);
 return library;
     }
 @Transactional
@@ -40,7 +40,7 @@ return library;
         library.setDateOfReturn(null);
         library.setFirstName(null);
         library.setLastName(null);
-        library.setId(null);
+        library.setDocumentNumber(null);
 
     }
     public int countAllBook(){

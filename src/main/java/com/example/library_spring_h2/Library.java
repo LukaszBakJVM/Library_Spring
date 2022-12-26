@@ -10,24 +10,24 @@ import java.time.LocalDate;
 public class Library {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long number;
+    private long id;
     private String bookName;
     private String author;
     private int numberOfPages;
     private String category;
 
-    public long getNumber() {
-        return number;
+    public long getId() {
+        return id;
     }
 
-    public void setNumber(long number) {
-        this.number = number;
+    public void setId(long number) {
+        this.id = number;
     }
 
     private int isbn;
     private String firstName;
     private String lastName;
-    private String id;
+    private String documentNumber;
 
     public LocalDate getDateOfReturn() {
         return dateOfReturn;
@@ -107,12 +107,12 @@ public class Library {
         this.lastName = lastName;
     }
 
-    public String getId() {
-        return id;
+    public String getDocumentNumber() {
+        return documentNumber;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setDocumentNumber(String id) {
+        this.documentNumber = id;
     }
 
     @Override
@@ -125,7 +125,7 @@ public class Library {
                 ", isbn=" + isbn +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", id='" + id + '\'' +
+                ", id='" + documentNumber + '\'' +
                 '}';
     }
 }

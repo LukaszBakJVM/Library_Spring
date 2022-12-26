@@ -13,20 +13,22 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 @SpringBootApplication
 public class LibrarySpringH2Application {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(LibrarySpringH2Application.class, args);
-        LibraryDto library = new LibraryDto("MMM", "mmm", 787, "horro", 56778);
-        LibraryDto library1 = new LibraryDto("MMM", "mmm", 787, "horro", 56788878);
-       LibraryService libraryService =run.getBean(LibraryService.class);
-      libraryService.addNewBook(library);
-       libraryService.addNewBook(library1);
-      libraryService.rent(2L,2,"lukasz","Bak","oyiyi4");
+        Loop loop =run.getBean(Loop.class);
+        loop.loopControl();
 
 
+
+    }
+    @Bean
+    Scanner sc(){
+        return new Scanner(System.in);
     }
 
 
