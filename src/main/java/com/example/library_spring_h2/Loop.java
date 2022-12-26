@@ -48,11 +48,13 @@ public class Loop {
     }
 
     private LibraryDto addBook() {
-
+        scanner.nextLine();
         System.out.println("Podaj nazwe ksiazki");
-        String bookName = scanner.next();
+
+        String bookName = scanner.nextLine().replaceAll(" ","_");
         System.out.println("Podaj Autora");
-        String author = scanner.next();
+        String author = scanner.nextLine().replaceAll(" ","_");
+       // scanner.nextLine();
         System.out.println("Podaj ilosc stron");
         int pagesNumber = scanner.nextInt();
         System.out.println("Podaj kategorie");
