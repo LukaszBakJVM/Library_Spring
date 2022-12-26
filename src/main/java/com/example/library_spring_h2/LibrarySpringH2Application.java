@@ -26,12 +26,14 @@ public class LibrarySpringH2Application {
 
 
     }
-    @Bean
-    Scanner sc(){
-        return new Scanner(System.in);
-    }
 
-
-
+@Bean
+    Scanner scanner() {
+    return new Scanner(System.in);
+}
 
     }
+
+
+
+

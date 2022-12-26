@@ -24,7 +24,7 @@ public class LibraryService {
         libraryRepo.deleteById(number);
     }
 @Transactional
-    public Library rent(long number, int day, String firstName, String lastName, String id) {
+    public Library rent(long number,  String firstName, String lastName, String id,int day) {
 Library library =libraryRepo.findById(number).orElseThrow(NotFoudBookExeption::new);
 LocalDate localDate =LocalDate.now();
 

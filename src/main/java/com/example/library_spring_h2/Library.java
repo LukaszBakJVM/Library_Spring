@@ -29,6 +29,7 @@ public class Library {
     private String lastName;
     private String documentNumber;
 
+
     public LocalDate getDateOfReturn() {
         return dateOfReturn;
     }
@@ -42,6 +43,9 @@ public class Library {
     public Library() {
     }
 
+
+
+
     public Library(String bookName, String author, int numberOfPages, String category, int isbn) {
         this.bookName = bookName;
         this.author = author;
@@ -50,6 +54,9 @@ public class Library {
         this.isbn = isbn;
 
     }
+
+
+
 
     public String getBookName() {
         return bookName;
