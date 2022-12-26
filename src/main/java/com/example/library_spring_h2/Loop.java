@@ -6,6 +6,7 @@ import java.util.Scanner;
 @Service
 public class Loop {
     private final Scanner scanner;
+
     private final LibraryService libraryService;
 
 
@@ -21,10 +22,14 @@ public class Loop {
             printOptions();
             options = Options.createOptions(scanner.nextInt());
             switch (options) {
+                case EXIT -> exit();
                 case ADD -> libraryService.addNewBook(addBook());
                case RENT -> libraryService.rent(id(),firstName(),lastName(),documentNumber(),dayOfRent());
+                case RETURN_BOOK -> libraryService.returnBook(id());
+                case PRINT_ALL_BOOKS -> libraryService.printAllBooks();
                 case DELETE_BOOK -> libraryService.delte(id());
-               // case RENT -> libraryService.printAllBooks();
+                case PRINT_ALL_AVAILABLE_BOOKS -> libraryService.findAllAvabileBooks().forEach(System.out::println);
+
             }
 
         } while (options != Options.EXIT);
@@ -42,6 +47,7 @@ public class Loop {
     }
 
     private LibraryDto addBook() {
+
         System.out.println("Podaj nazwe ksiazki");
         String bookName = scanner.next();
         System.out.println("Podaj Autora");
@@ -89,5 +95,8 @@ public class Loop {
         return dayOfRent;
 
 
+    }
+    private void exit(){
+        System.out.println("By by");
     }
 }

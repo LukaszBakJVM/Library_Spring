@@ -10,7 +10,8 @@ import java.time.LocalDate;
 public class Library {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+   private  long id;
+
     private String bookName;
     private String author;
     private int numberOfPages;
@@ -125,7 +126,7 @@ public class Library {
     @Override
     public String toString() {
         return
-                "Tytul: " + bookName +
+                "  Tytul: " + bookName +
                 "  Autor: " + author +
                 "  Ilosc stron: " + numberOfPages +
                 "  kategoria: " + category +
