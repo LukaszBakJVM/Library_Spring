@@ -7,8 +7,11 @@ import java.util.List;
 
 
 interface LibraryRepo extends CrudRepository<Library,Long> {
+
+
    List<Library> findAllByDocumentNumberNull();
 List<Library>findAllByDocumentNumberNotNull();
+List<Library>findAll();
 
 
 

@@ -24,9 +24,9 @@ public class Loop {
             switch (options) {
                 case EXIT -> exit();
                 case ADD -> libraryService.addNewBook(addBook());
-               case RENT -> libraryService.rent(id(),firstName(),lastName(),documentNumber(),dayOfRent());
+                case RENT -> libraryService.rent(id(),firstName(),lastName(),documentNumber(),dayOfRent());
                 case RETURN_BOOK -> libraryService.returnBook(id());
-                case PRINT_ALL_BOOKS -> libraryService.printAllBooks();
+                case PRINT_ALL_BOOKS -> libraryService.allBooks().forEach(System.out::println);
                 case DELETE_BOOK -> libraryService.delte(id());
                 case PRINT_ALL_AVAILABLE_BOOKS -> libraryService.findAllAvabileBooks().forEach(System.out::println);
                 case PRINT_ALL_NOT_AVAILABLE_BOOKS -> libraryService.findAllRentBooks().forEach(System.out::println);

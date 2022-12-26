@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,8 +27,13 @@ public class LibraryService {
 
     @Transactional
     public void delte(long number) {
-        libraryRepo.deleteById(number);
-    }
+        libraryRepo.findById(number).ifPresent(libraryrepo -> libraryRepo.deleteById(number));
+
+        }
+
+
+
+
 
     @Transactional
     public Library rent(long number, String firstName, String lastName, String id, int day) {
@@ -51,14 +57,17 @@ public class LibraryService {
 
     }
 
-    public void printAllBooks() {
-        for (Library l : libraryRepo.findAll()
-        ) {
-            System.out.println(l);
+    public List<LibraryDto>allBooks() {
+        return libraryRepo.findAll()
+                .stream()
+                .map(library -> new LibraryDto(library.getId(), library.getBookName(), library.getAuthor()
+                        , library.getNumberOfPages(), library.getCategory(), library.getNumberOfPages()))
+                .collect(Collectors.toList());
+
 
         }
 
-    }
+
 
     public List<LibraryDto>findAllAvabileBooks() {
         return libraryRepo.findAllByDocumentNumberNull()
