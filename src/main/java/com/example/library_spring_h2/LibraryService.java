@@ -60,15 +60,21 @@ public class LibraryService {
 
     }
 
-    public List<LibraryDto>findAllAvabileBooks(){
+    public List<LibraryDto>findAllAvabileBooks() {
         return libraryRepo.findAllByDocumentNumberNull()
                 .stream()
-                .map(library->new LibraryDto(library.getId(), library.getBookName(), library.getAuthor()
-                ,library.getNumberOfPages(),library.getCategory(),library.getNumberOfPages()))
+                .map(library -> new LibraryDto(library.getId(), library.getBookName(), library.getAuthor()
+                        , library.getNumberOfPages(), library.getCategory(), library.getNumberOfPages()))
                 .collect(Collectors.toList());
 
 
-
+    }
+    public List<LibraryDto>findAllRentBooks(){
+        return libraryRepo.findAllByDocumentNumberNotNull()
+                .stream()
+                .map(library -> new LibraryDto(library.getId(), library.getBookName(), library.getAuthor()
+                        , library.getNumberOfPages(), library.getCategory(), library.getNumberOfPages()))
+                .collect(Collectors.toList());
 
 
 

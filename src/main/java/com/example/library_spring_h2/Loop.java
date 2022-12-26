@@ -29,6 +29,7 @@ public class Loop {
                 case PRINT_ALL_BOOKS -> libraryService.printAllBooks();
                 case DELETE_BOOK -> libraryService.delte(id());
                 case PRINT_ALL_AVAILABLE_BOOKS -> libraryService.findAllAvabileBooks().forEach(System.out::println);
+                case PRINT_ALL_NOT_AVAILABLE_BOOKS -> libraryService.findAllRentBooks().forEach(System.out::println);
 
             }
 
@@ -61,7 +62,7 @@ public class Loop {
         return new LibraryDto(bookName, author, pagesNumber, category, isbn);
     }
 
-    // libraryService.rent(2L,2,"lukasz","Bak","oyiyi4");
+
 
 
     private long id() {
