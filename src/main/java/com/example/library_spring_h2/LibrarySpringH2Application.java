@@ -14,7 +14,7 @@ public class LibrarySpringH2Application {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(LibrarySpringH2Application.class, args);
        Loop loop =run.getBean(Loop.class);
-        loop.loopControl();
+       loop.loopControl();
 
 
 
