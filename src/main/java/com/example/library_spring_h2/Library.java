@@ -124,15 +124,15 @@ public class Library {
 
     @Override
     public String toString() {
-        return "Library{" +
-                "bookName='" + bookName + '\'' +
-                ", Author='" + author + '\'' +
-                ", numberOfPages='" + numberOfPages + '\'' +
-                ", category='" + category + '\'' +
-                ", isbn=" + isbn +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", id='" + documentNumber + '\'' +
-                '}';
+        return
+                "Tytul: " + bookName +
+                "  Autor: " + author +
+                "  Ilosc stron: " + numberOfPages +
+                "  kategoria: " + category +
+                "  ISBN: "+ isbn +
+                "  Imie: "+ firstName +
+                "  Nazwisko: " + lastName +
+                "  Seria i nr. dokumentu tozsamosci: " + documentNumber ;
+
     }
 }

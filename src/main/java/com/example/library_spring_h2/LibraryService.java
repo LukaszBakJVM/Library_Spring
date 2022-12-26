@@ -49,8 +49,14 @@ return library;
             System.out.println(l);
 
         }
-    }
 
+    }
+public void printAllAvabileBooks(){
+
+         {
+
+    }
+}
 
 
 }
