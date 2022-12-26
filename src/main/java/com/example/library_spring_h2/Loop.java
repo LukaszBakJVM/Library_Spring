@@ -22,8 +22,9 @@ public class Loop {
             options = Options.createOptions(scanner.nextInt());
             switch (options) {
                 case ADD -> libraryService.addNewBook(addBook());
-                case RENT -> libraryService.rent(id(),firstName(),lastName(),documentNumber(),dayOfRent());
+               case RENT -> libraryService.rent(id(),firstName(),lastName(),documentNumber(),dayOfRent());
                 case DELETE_BOOK -> libraryService.delte(id());
+               // case RENT -> libraryService.printAllBooks();
             }
 
         } while (options != Options.EXIT);

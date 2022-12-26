@@ -43,8 +43,12 @@ return library;
         library.setDocumentNumber(null);
 
     }
-    public int countAllBook(){
-      return   libraryRepo.countLibraryByIdIsNull();
+    public void printAllBooks(){
+        for (Library l: libraryRepo.findAll()
+             ) {
+            System.out.println(l);
+
+        }
     }
 
 
