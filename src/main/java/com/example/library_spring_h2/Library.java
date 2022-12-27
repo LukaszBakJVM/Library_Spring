@@ -7,14 +7,18 @@ import java.time.LocalDate;
 
 @Entity
 
+
 public class Library {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    private  long id;
-
+    @Column(name = "Nazwa ksiazki")
     private String bookName;
+    @Column(name = "Autor")
     private String author;
+    @Column(name = "Ilosc stron")
     private int numberOfPages;
+    @Column(name = "Kategoria")
     private String category;
 
     public long getId() {
@@ -26,8 +30,11 @@ public class Library {
     }
 
     private int isbn;
+    @Column(name = "Imie")
     private String firstName;
+    @Column(name = "Nazwisko")
     private String lastName;
+    @Column(name = "Seria i nr dokumentu")
     private String documentNumber;
 
 
@@ -38,6 +45,7 @@ public class Library {
     public void setDateOfReturn(LocalDate dateOfReturn) {
         this.dateOfReturn = dateOfReturn;
     }
+    @Column(name = "Data zwrotu")
 
     private LocalDate dateOfReturn;
 
